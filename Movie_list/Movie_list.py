@@ -4,7 +4,7 @@ import pyodbc
 # back end
 
 def showBtn():
-    db_file = r'C:\Users\2018000485\Downloads\Movie_ListTbl.accdb'
+    db_file = r'C:\Users\kereh\Downloads\Movie_list_table.accdb'
 
     # Establish a connection to the database
     conn_str = r'DRIVER={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=' + db_file
@@ -36,7 +36,7 @@ def showBtn():
             relDate = row.Release_Date.strftime("%d-%m-%Y")
 
             
-            Movie_list = f'{row.Movie_Name:<70}{relDate:<20}{row.Genres:<20}{row.Maturity_Ratings:<20}{row.Number_of_Stars:<20}{row.Views:<20}'
+            Movie_list = f'{row.Movie_Name:<70}{relDate:<20}{row.Genres:<20}{row.Maturity_Ratings:<20}{row.Number_of_Stars:<20}{row.Views:<20}' # Creates the coloumn spacings 
             print(Movie_list)
             
     except pyodbc.Error as e:
